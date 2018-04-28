@@ -1,0 +1,60 @@
+<div class="row">
+  <!-- burgers to eat section -->
+  <div class="col-sm-6">
+    <div id="ready_to_eat">
+      <!-- Dynamically Insert Ready Burgers Here -->
+      {{#each burgers}} {{#unless devoured}}
+      <form action="burger/eat/{{id}}" method="POST">
+        <div class="input-group">
+          <li class="form-control">{{id}}. {{burger_name}}</li>
+          <span class="input-group-btn">
+            <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+          </span>
+        </div>
+      </form>
+      {{/unless}} {{/each}}
+    </div>
+  </div>
+
+  <!-- burgers devoured section -->
+  <div class="col-sm-6">
+    <div id="already_eaten">
+      <!-- Dynamically Insert Eaten Burgers Here -->
+      {{#each burgers}} {{#if this.devoured}}
+      <div class="input-group">
+        <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+      </div>
+      {{/if}} {{/each}}
+    </div>
+  </div>
+</div>
+
+<!-- burger input section -->
+<div class="row">
+  <div class="col-sm-12">
+    <form action="burger/create" method="POST">
+      <div class="row">
+        <!-- Empty Div to help center textarea -->
+        <div class="col-sm-3"></div>
+
+        <!-- Burger Input Box -->
+        <div class="form-group col-sm-6">
+          <center>
+            <label for="new_burger">Request a new burger and place your order!</label>
+          </center>
+          <textarea class="form-control" columns="8" rows="4" id="new_burger" name="burger_name"></textarea>
+        </div>
+
+        <!-- Empty Div to help center textarea -->
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row">
+        <!-- Submit Button -->
+        <center>
+          <button id="submit-button" type="submit" class="btn btn-danger">Place Order</button>
+        </center>
+      </div>
+    </form>
+  </div>
+</div>
