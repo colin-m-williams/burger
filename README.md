@@ -13,7 +13,7 @@ Eat-Da-Burger!, a restaurant app that lets users input burgers they like to eat.
 
 * The app stores every burger in a database, whether devoured or not.
 
-* [Check out the app for yourself](burger_demo.mp4).
+* [Check out the app for yourself](https://afternoon-journey-42499.herokuapp.com/index).
 
 ---
 
